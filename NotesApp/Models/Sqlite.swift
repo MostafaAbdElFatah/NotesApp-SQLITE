@@ -35,6 +35,7 @@ struct Sqlite {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy hh:mm:ss a"
         let dateid = formatter.string(from: date)
+        
         //**/
         let queryString = "INSERT INTO \(Constants.table_name) "
             + "VALUES ('\(dateid)','\(note)');"
@@ -43,12 +44,13 @@ struct Sqlite {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
         }
-/*
+         
+        /*
         //creating a statement
         var stmt: OpaquePointer?
         
         //the insert query
-        let queryString = "INSERT INTO \(Constants.table_name) VALUES (?,?)"
+        let queryString = "INSERT INTO \(Constants.table_name) VALUES ('?','?')"
         
         //preparing the query
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK {
@@ -75,11 +77,9 @@ struct Sqlite {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure inserting hero: \(errmsg)")
             return
-        }
-        if sqlite3_finalize(stmt) != SQLITE_OK {
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error finalizing prepared statement: \(errmsg)")
         }*/
+    
+        
     }
     
     static func getNotes() -> [Note] {
