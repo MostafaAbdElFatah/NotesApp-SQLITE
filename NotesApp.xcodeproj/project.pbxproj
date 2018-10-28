@@ -12,6 +12,12 @@
 		617A802D218468AE00AA8A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617A802B218468AE00AA8A99 /* Main.storyboard */; };
 		617A802F218468B300AA8A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 617A802E218468B300AA8A99 /* Assets.xcassets */; };
 		617A8032218468B300AA8A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617A8030218468B300AA8A99 /* LaunchScreen.storyboard */; };
+		617A80402184718500AA8A99 /* Sqlite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A803F2184718500AA8A99 /* Sqlite.swift */; };
+		617A8043218479B700AA8A99 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A8042218479B700AA8A99 /* Constants.swift */; };
+		617A804521847C3000AA8A99 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A804421847C3000AA8A99 /* NotesTableViewController.swift */; };
+		617A804721847F6B00AA8A99 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A804621847F6B00AA8A99 /* NoteTableViewCell.swift */; };
+		617A80492184805F00AA8A99 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A80482184805F00AA8A99 /* Note.swift */; };
+		617A804B2184818000AA8A99 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A804A2184818000AA8A99 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,13 @@
 		617A802E218468B300AA8A99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		617A8031218468B300AA8A99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		617A8033218468B300AA8A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		617A803D21846D0700AA8A99 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		617A803F2184718500AA8A99 /* Sqlite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sqlite.swift; sourceTree = "<group>"; };
+		617A8042218479B700AA8A99 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		617A804421847C3000AA8A99 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		617A804621847F6B00AA8A99 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		617A80482184805F00AA8A99 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		617A804A2184818000AA8A99 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +53,7 @@
 			children = (
 				617A8026218468AE00AA8A99 /* NotesApp */,
 				617A8025218468AE00AA8A99 /* Products */,
+				617A803C21846D0700AA8A99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +68,60 @@
 		617A8026218468AE00AA8A99 /* NotesApp */ = {
 			isa = PBXGroup;
 			children = (
-				617A8027218468AE00AA8A99 /* AppDelegate.swift */,
-				617A8029218468AE00AA8A99 /* ViewController.swift */,
+				617A80412184798000AA8A99 /* Supporting Files */,
+				617A8039218468C300AA8A99 /* App */,
+				617A803B218468F500AA8A99 /* Models */,
+				617A803A218468EC00AA8A99 /* Views */,
 				617A802B218468AE00AA8A99 /* Main.storyboard */,
-				617A802E218468B300AA8A99 /* Assets.xcassets */,
-				617A8030218468B300AA8A99 /* LaunchScreen.storyboard */,
 				617A8033218468B300AA8A99 /* Info.plist */,
 			);
 			path = NotesApp;
+			sourceTree = "<group>";
+		};
+		617A8039218468C300AA8A99 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				617A8030218468B300AA8A99 /* LaunchScreen.storyboard */,
+				617A8027218468AE00AA8A99 /* AppDelegate.swift */,
+				617A802E218468B300AA8A99 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		617A803A218468EC00AA8A99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				617A8029218468AE00AA8A99 /* ViewController.swift */,
+				617A804421847C3000AA8A99 /* NotesTableViewController.swift */,
+				617A804621847F6B00AA8A99 /* NoteTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		617A803B218468F500AA8A99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				617A803F2184718500AA8A99 /* Sqlite.swift */,
+				617A80482184805F00AA8A99 /* Note.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		617A803C21846D0700AA8A99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				617A803D21846D0700AA8A99 /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		617A80412184798000AA8A99 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				617A8042218479B700AA8A99 /* Constants.swift */,
+				617A804A2184818000AA8A99 /* Extensions.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +196,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				617A802A218468AE00AA8A99 /* ViewController.swift in Sources */,
+				617A80402184718500AA8A99 /* Sqlite.swift in Sources */,
+				617A80492184805F00AA8A99 /* Note.swift in Sources */,
+				617A804B2184818000AA8A99 /* Extensions.swift in Sources */,
 				617A8028218468AE00AA8A99 /* AppDelegate.swift in Sources */,
+				617A8043218479B700AA8A99 /* Constants.swift in Sources */,
+				617A804521847C3000AA8A99 /* NotesTableViewController.swift in Sources */,
+				617A804721847F6B00AA8A99 /* NoteTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
